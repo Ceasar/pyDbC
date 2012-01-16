@@ -1,0 +1,2 @@
+Inspired by Eiffel's Design by Contract, this module lets Python developers
+write effective contracts for class methods.
