@@ -5,10 +5,11 @@ FEATURES
 -Ability to disable contracts when shipping code, (similar to disabling
 asserts) by running the interpreter with -O (optimization) option.
 -'old' and 'result' constructs in postcondition, via self.old and self.result
+-Extremely light-weight. Only need to copy contract.py to get started.
 -All the benefits of contracts.
 
-To use, simply copy contract.py and subclass Contract to specify a contract
-for a method. Define 'require' and 'ensure' as needed and then decorate the
+To use, simply copy contract.py and subclass Contract to specify contract
+for each method. Define 'require' and 'ensure' as needed and then decorate the
 associated method with the contract to enforce it.
 
 Importantly, Contracts, like assertions, can be turned off by running the

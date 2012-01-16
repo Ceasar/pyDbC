@@ -17,10 +17,11 @@ class Contract(object):
   def __call__(self, func):
     if __debug__:
       def supplier(instance, *args, **kwargs):
-        assert self.require(instance, *args, **kwargs)
+        self.require(instance, *args, **kwargs)
         self.old = copy.deepcopy(instance)
         self.result = result = func(instance, *args, **kwargs)
-        assert self.ensure(instance, *args, **kwargs)
+        self.ensure(instance, *args, **kwargs)
+        self.invariant(instance, *args, **kwargs)
         return result
       return supplier
     else:
@@ -28,8 +29,10 @@ class Contract(object):
 
 
   def require(self, instance, *args, **kwargs):
-    return True
+    pass
 
+  def invariant(self, instance, *args, **kwargs):
+    pass
 
   def ensure(self, instance, *args, **kwargs):
-    return True
+    pass
