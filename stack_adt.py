@@ -2,7 +2,7 @@ from contract import Contract
 
 
 class StackInvariant(Contract):
-  def invariant(self, instance):
+  def invariant(self, instance, *args, **kwargs):
     assert len(instance) >= 0
     assert instance.empty == (len(instance) == 0)
 
